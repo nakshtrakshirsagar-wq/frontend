@@ -1,0 +1,736 @@
+/* =========================================
+   BUS CARD
+========================================= */
+
+.bus-card {
+  width: 100%;
+  min-width: 0;
+
+  display: grid;
+
+  grid-template-columns:
+    minmax(190px, 0.8fr)
+    minmax(280px, 1.35fr)
+    minmax(175px, 0.65fr);
+
+  overflow: hidden;
+
+  border: 1px solid #dcebd6;
+  border-radius: 18px;
+
+  background: linear-gradient(
+    135deg,
+    #ffffff 0%,
+    #fbfdf9 100%
+  );
+
+  box-shadow:
+    0 7px 25px rgba(41, 91, 45, 0.07);
+
+  color: #173f22;
+
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.bus-card:hover {
+  transform: translateY(-2px);
+
+  box-shadow:
+    0 12px 30px rgba(41, 91, 45, 0.11);
+}
+
+
+/* =========================================
+   IMAGE
+========================================= */
+
+.bus-image-wrapper {
+  position: relative;
+
+  min-width: 0;
+
+  min-height: 260px;
+
+  overflow: hidden;
+
+  background: #eaf2e7;
+}
+
+.bus-image {
+  width: 100%;
+  height: 100%;
+
+  min-height: 260px;
+
+  display: block;
+
+  object-fit: cover;
+
+  transition: transform 0.4s ease;
+}
+
+.bus-card:hover .bus-image {
+  transform: scale(1.035);
+}
+
+.bus-image-overlay {
+  position: absolute;
+  inset: 0;
+
+  background:
+    linear-gradient(
+      180deg,
+      rgba(0, 0, 0, 0.04),
+      rgba(0, 0, 0, 0.22)
+    );
+
+  pointer-events: none;
+}
+
+.top-rated-badge {
+  position: absolute;
+
+  top: 15px;
+  left: 15px;
+
+  z-index: 2;
+
+  display: inline-flex;
+  align-items: center;
+
+  gap: 5px;
+
+  padding: 7px 10px;
+
+  border-radius: 8px;
+
+  background: #45a640;
+
+  color: #ffffff;
+
+  font-size: 10px;
+  font-weight: 800;
+
+  box-shadow:
+    0 5px 12px rgba(39, 117, 38, 0.25);
+}
+
+
+/* =========================================
+   MAIN CONTENT
+========================================= */
+
+.bus-main-content {
+  min-width: 0;
+
+  display: flex;
+  flex-direction: column;
+
+  padding: 22px 20px;
+}
+
+
+/* =========================================
+   HEADER
+========================================= */
+
+.bus-header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+
+  gap: 12px;
+
+  min-width: 0;
+}
+
+.bus-title-area {
+  min-width: 0;
+}
+
+.bus-title-area h3 {
+  margin: 0;
+
+  overflow: hidden;
+
+  color: #173f22;
+
+  font-size: 17px;
+  line-height: 1.25;
+  font-weight: 800;
+
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.bus-type {
+  display: inline-flex;
+
+  margin-top: 7px;
+  padding: 5px 8px;
+
+  border: 1px solid #d7e9d1;
+  border-radius: 7px;
+
+  background: #eff8eb;
+
+  color: #3d7f3d;
+
+  font-size: 9px;
+  line-height: 1;
+  font-weight: 750;
+}
+
+.bus-rating {
+  flex: 0 0 auto;
+
+  display: inline-flex;
+  align-items: center;
+
+  gap: 4px;
+
+  padding: 7px 9px;
+
+  border: 1px solid #d8ebd3;
+  border-radius: 8px;
+
+  background: #f1faed;
+
+  color: #3e963c;
+
+  font-size: 10px;
+}
+
+.bus-rating span {
+  color: #829282;
+
+  font-size: 9px;
+}
+
+
+/* =========================================
+   JOURNEY
+========================================= */
+
+.journey-section {
+  min-width: 0;
+
+  display: grid;
+
+  grid-template-columns:
+    minmax(75px, 1fr)
+    minmax(90px, 1.1fr)
+    minmax(75px, 1fr);
+
+  align-items: center;
+
+  gap: 12px;
+
+  margin-top: 25px;
+}
+
+.journey-point {
+  min-width: 0;
+}
+
+.journey-point strong {
+  display: block;
+
+  color: #123d20;
+
+  font-size: 17px;
+  line-height: 1.2;
+  font-weight: 850;
+
+  white-space: nowrap;
+}
+
+.journey-point span {
+  display: flex;
+  align-items: center;
+
+  gap: 3px;
+
+  margin-top: 5px;
+
+  color: #728176;
+
+  font-size: 10px;
+  line-height: 1.2;
+}
+
+.arrival-point {
+  text-align: right;
+}
+
+.arrival-point span {
+  justify-content: flex-end;
+}
+
+.journey-duration {
+  min-width: 0;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  gap: 6px;
+}
+
+.duration-line {
+  width: 100%;
+
+  display: flex;
+  align-items: center;
+
+  min-width: 0;
+}
+
+.journey-dot {
+  width: 9px;
+  height: 9px;
+
+  flex: 0 0 9px;
+
+  border: 2px solid #4dac47;
+  border-radius: 50%;
+
+  background: #ffffff;
+}
+
+.journey-line {
+  height: 1px;
+
+  flex: 1;
+
+  min-width: 10px;
+
+  background: #b8d9b2;
+}
+
+.duration-line svg {
+  flex: 0 0 auto;
+
+  color: #58a950;
+}
+
+.duration-text {
+  color: #657668;
+
+  font-size: 9px;
+  font-weight: 700;
+
+  white-space: nowrap;
+}
+
+
+/* =========================================
+   AMENITIES
+========================================= */
+
+.amenities-row {
+  min-width: 0;
+
+  display: flex;
+  flex-wrap: wrap;
+
+  gap: 7px;
+
+  margin-top: 22px;
+}
+
+.amenity-item {
+  display: inline-flex;
+  align-items: center;
+
+  gap: 5px;
+
+  padding: 7px 8px;
+
+  border: 1px solid #e0ebdc;
+  border-radius: 7px;
+
+  background: #f8fbf6;
+
+  color: #53705a;
+
+  font-size: 9px;
+  line-height: 1.2;
+  font-weight: 650;
+
+  white-space: nowrap;
+}
+
+.amenity-item svg {
+  flex: 0 0 auto;
+
+  color: #55a74f;
+}
+
+
+/* =========================================
+   BENEFITS
+========================================= */
+
+.bus-benefits {
+  display: flex;
+  flex-wrap: wrap;
+
+  gap: 10px;
+
+  margin-top: auto;
+  padding-top: 18px;
+}
+
+.benefit {
+  display: inline-flex;
+  align-items: center;
+
+  gap: 5px;
+
+  font-size: 9px;
+  font-weight: 700;
+}
+
+.benefit svg {
+  flex: 0 0 auto;
+}
+
+.benefit.cancellation {
+  color: #3d9a4b;
+}
+
+.benefit.confirmation {
+  color: #438d55;
+}
+
+
+/* =========================================
+   PRICE
+========================================= */
+
+.bus-price-section {
+  min-width: 0;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  padding: 22px 18px;
+
+  border-left: 1px solid #e4eee1;
+
+  background:
+    linear-gradient(
+      180deg,
+      #ffffff,
+      #f4faef
+    );
+}
+
+.starting-text {
+  color: #849185;
+
+  font-size: 9px;
+  font-weight: 650;
+
+  white-space: nowrap;
+}
+
+.bus-price {
+  display: flex;
+  align-items: baseline;
+
+  margin-top: 4px;
+
+  color: #143e20;
+
+  font-size: 27px;
+  line-height: 1;
+  font-weight: 900;
+
+  white-space: nowrap;
+}
+
+.currency {
+  margin-right: 2px;
+
+  color: #449841;
+
+  font-size: 17px;
+}
+
+.tax-text {
+  margin-top: 6px;
+
+  color: #8a968b;
+
+  font-size: 8px;
+}
+
+.select-seat-btn {
+  width: 100%;
+  max-width: 165px;
+
+  min-height: 43px;
+
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  gap: 7px;
+
+  margin-top: 20px;
+
+  border: 0;
+  border-radius: 10px;
+
+  background: linear-gradient(
+    135deg,
+    #55b94c,
+    #3d963c
+  );
+
+  color: #ffffff;
+
+  font-family: inherit;
+
+  font-size: 11px;
+  font-weight: 800;
+
+  cursor: pointer;
+
+  box-shadow:
+    0 7px 17px rgba(62, 150, 61, 0.22);
+
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.select-seat-btn:hover {
+  transform: translateY(-2px);
+
+  box-shadow:
+    0 10px 22px rgba(62, 150, 61, 0.3);
+}
+
+.seat-info {
+  margin-top: 8px;
+
+  color: #819083;
+
+  font-size: 8px;
+}
+
+
+/* =========================================
+   GRID VIEW
+========================================= */
+
+/*
+  IMPORTANT:
+  In grid view, don't squeeze the horizontal
+  bus card into tiny columns.
+
+  Stack the card vertically.
+*/
+
+.search-results-list.grid-view {
+  display: grid;
+
+  grid-template-columns:
+    repeat(2, minmax(0, 1fr));
+
+  gap: 18px;
+}
+
+.search-results-list.grid-view .bus-card {
+  display: flex;
+  flex-direction: column;
+
+  min-width: 0;
+}
+
+.search-results-list.grid-view
+.bus-image-wrapper {
+  width: 100%;
+  height: 190px;
+
+  min-height: 190px;
+}
+
+.search-results-list.grid-view
+.bus-image {
+  min-height: 190px;
+}
+
+.search-results-list.grid-view
+.bus-main-content {
+  padding: 18px;
+}
+
+.search-results-list.grid-view
+.bus-price-section {
+  min-height: 125px;
+
+  flex-direction: row;
+  flex-wrap: wrap;
+
+  justify-content: space-between;
+
+  gap: 8px;
+
+  padding: 15px 18px;
+
+  border-top: 1px solid #e4eee1;
+  border-left: 0;
+}
+
+.search-results-list.grid-view
+.bus-price-section
+.starting-text {
+  width: 100%;
+}
+
+.search-results-list.grid-view
+.select-seat-btn {
+  width: auto;
+
+  min-width: 150px;
+
+  margin-top: 0;
+}
+
+.search-results-list.grid-view
+.seat-info {
+  margin-top: 0;
+}
+
+
+/* =========================================
+   RESPONSIVE
+========================================= */
+
+@media (max-width: 1250px) {
+  .bus-card {
+    grid-template-columns:
+      minmax(165px, 0.75fr)
+      minmax(250px, 1.25fr)
+      minmax(155px, 0.65fr);
+  }
+
+  .bus-main-content {
+    padding: 18px;
+  }
+
+  .journey-section {
+    gap: 8px;
+  }
+}
+
+@media (max-width: 1050px) {
+  .search-results-list.grid-view {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 900px) {
+  .bus-card {
+    grid-template-columns:
+      190px minmax(0, 1fr);
+  }
+
+  .bus-price-section {
+    grid-column: 1 / -1;
+
+    flex-direction: row;
+    justify-content: space-between;
+
+    border-top: 1px solid #e4eee1;
+    border-left: 0;
+  }
+
+  .select-seat-btn {
+    margin-top: 0;
+  }
+
+  .seat-info {
+    margin-top: 0;
+  }
+}
+
+@media (max-width: 650px) {
+  .bus-card {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .bus-image-wrapper,
+  .bus-image {
+    min-height: 200px;
+    height: 200px;
+  }
+
+  .bus-main-content {
+    padding: 17px;
+  }
+
+  .bus-price-section {
+    min-height: 115px;
+
+    padding: 15px 17px;
+  }
+
+  .journey-section {
+    margin-top: 20px;
+  }
+}
+
+@media (max-width: 480px) {
+  .bus-image-wrapper,
+  .bus-image {
+    height: 175px;
+    min-height: 175px;
+  }
+
+  .bus-header {
+    flex-direction: column;
+  }
+
+  .bus-rating {
+    align-self: flex-start;
+  }
+
+  .journey-section {
+    grid-template-columns:
+      minmax(65px, 1fr)
+      minmax(65px, 0.9fr)
+      minmax(65px, 1fr);
+
+    gap: 7px;
+  }
+
+  .journey-point strong {
+    font-size: 14px;
+  }
+
+  .amenities-row {
+    gap: 5px;
+  }
+
+  .bus-price-section {
+    align-items: center;
+  }
+
+  .bus-price {
+    font-size: 23px;
+  }
+
+  .select-seat-btn {
+    min-width: 130px;
+  }
+}
